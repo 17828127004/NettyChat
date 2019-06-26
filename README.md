@@ -7,6 +7,12 @@
 5. 发送消息：调用IMSClientInterface.sendMsg(MessageProtobuf.Msg msg)即可发送
 6. 接收消息：收到消息会回调IMSEventListener.dispatchMsg(MessageProtobuf.Msg msg)方法。
 ```
+## lib库添加混淆
+```
+-keep class com.freddy.im.** { *; }
+-dontwarn io.netty.**
+-keep class io.netty.**{*;}
+```
 
 注：由于jcenter账号一直申请不了，所以目前可以先通过下载源码方式进行依赖，后续会发布到jcenter上，以gradle方式进行依赖。
 
